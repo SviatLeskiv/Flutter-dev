@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:v_temi/widgets/auth/auth_widget.dart';
-import 'package:v_temi/widgets/pages/my_page.dart';
+import 'package:v_temi/widgets/pages/MY_PAGE1.dart';
 
 void main() {
   runApp(const MyApp());

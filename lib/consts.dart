@@ -1,8 +1,11 @@
-// ignore_for_file: constant_identifier_names
+// TODO Implement this library.// ignore_for_file: constant_identifier_names
 
 import 'package:flutter/material.dart';
 
+
+
 abstract class MyImages {
+  
   static const logo_main = 'images/logo_main.png';
   static const logo = 'images/logo.png';
   static const avatar = 'images/avatar.png';

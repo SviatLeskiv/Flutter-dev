@@ -69,21 +69,20 @@ class _MyFriendsWidgetState extends State<MyFriendsWidget> {
         commonFriend: '15 common friends')
   ];
 
-
   var _filteredFriends = <Friend>[];
 
   final _searchController = TextEditingController();
 
-  void _searchFriends(){
+  void _searchFriends() {
     final query = _searchController.text;
-    if (query.isEmpty){
+    if (query.isEmpty) {
       _filteredFriends = _friends;
     } else {
-      _filteredFriends = _friends.where((Friend friend){
+      _filteredFriends = _friends.where((Friend friend) {
         return friend.friendName.toLowerCase().contains(query.toLowerCase());
       }).toList();
     }
-      setState(() {});
+    setState(() {});
   }
 
   @override

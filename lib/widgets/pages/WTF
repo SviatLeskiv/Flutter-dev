@@ -1,0 +1,86 @@
+
+                    if (state is AvatarInitial) {
+                      return const Center(
+                          child: Text(
+                        "Initial",
+                        style: TextStyle(color: Colors.white),
+                      ));
+                    }
+                    if (state is AvatarLoaded) {
+                      return AvatarWidget(
+                        avatar: state.url,
+                      );
+                    }
+                    return const Text('Error');
+                  },
+                ),
+              ),
+              FloatingActionButton(
+            child: const Icon(Icons.add),
+            onPressed: () => context.read<AvatarBloc>().add(ChangeAvatar()),
+          ),
+            ],
+          ),
+          MyFriendsWidget(),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedBar,
+        selectedItemColor: Colors.black,
+        backgroundColor: Colors.orange,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.message),
+            label: 'Повідомлення',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.photo),
+            label: 'Моя сторінка',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.people),
+            label: 'Друзі',
+          )
+        ],
+        onTap: _onSelectedBar,
+      ),
+    );
+  }
+}
+
+class AvatarWidget extends StatelessWidget {
+  const AvatarWidget({
+    Key? key,
+    required this.avatar,
+  }) : super(key: key);
+
+  final Avatar avatar;
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: Center(
+        child: Text('data'),
+      ),
+    );
+    //Image.asset(avatar as String),
+    /*  child: ClipOval(
+        child: Image(image: AssetImage(MyImages.avatar)),
+      ),
+      */
+  }
+}
+
+class MyMassageWidget extends StatelessWidget {
+  const MyMassageWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const Text(
+      'Повідомлення',
+      style: MyFonts.onBlack,
+    );
+  }
+}
