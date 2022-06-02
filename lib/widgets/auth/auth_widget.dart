@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, prefer_const_constructors_in_immutables, non_constant_identifier_names
-
 import 'package:flutter/material.dart';
 import 'package:v_temi/consts.dart';
 
@@ -14,12 +12,12 @@ class AuthMenu extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.orange[700],
         centerTitle: true,
-        title: Image(image: AssetImage(MyImages.logo_main),
+        title: const Image(image: AssetImage(MyImages.logoMain),
           height: 50,
         ),
       ),
       body: ListView(
-        children: [
+        children: const [
           _FormWidget()
         ]
       ),
@@ -27,7 +25,7 @@ class AuthMenu extends StatelessWidget {
   }
 }
 class _FormWidget extends StatefulWidget {
-  _FormWidget({Key? key}) : super(key: key);
+  const _FormWidget({Key? key}) : super(key: key);
 
   @override
   State<_FormWidget> createState() => _FormWidgetState();
@@ -57,39 +55,39 @@ class _FormWidgetState extends State<_FormWidget> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image(image: AssetImage(MyImages.logo), width: 125),
-            SizedBox(height: 50),
-            Text('Вхід:', style: MyFonts.onBlack),
-            SizedBox(height: 30),
+            const Image(image: AssetImage(MyImages.logo), width: 125),
+            const SizedBox(height: 50),
+            const Text('Вхід:', style: MyFonts.onBlack),
+            const SizedBox(height: 30),
             TextField(
               cursorColor: Colors.orange,
               decoration: MyTextField.textFieldDecor(' Номер телефону'), style: MyFonts.onBlack, controller: _loginTextController),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             TextField(
               cursorColor: Colors.orange,
               obscureText: true, decoration: MyTextField.textFieldDecor(' Пароль'), style: MyFonts.onBlack, controller: _passwordTextController),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextButton(
                 onPressed:_auth, 
                 style: MyButtons.fillOrange,
-                child: Text('Увійти')),
-                SizedBox(width: 20),
+                child: const Text('Увійти')),
+                const SizedBox(width: 20),
                 TextButton(
                 onPressed:() {}, 
                 style: ButtonStyle(
                   foregroundColor: MaterialStateProperty.all(Colors.orange)
                 ),
-                child: Text('Забули пароль?')),
+                child: const Text('Забули пароль?')),
               ],
             ),
-            SizedBox(height: 80),
+            const SizedBox(height: 80),
             TextButton(
                 onPressed:() {}, 
                 style: MyButtons.fillOrange,
-                child: Text('Реєстрація')),
+                child: const Text('Реєстрація')),
           ],
         ),
       ),

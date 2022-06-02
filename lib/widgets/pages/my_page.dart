@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:v_temi/avatarList/avatar_list.dart';
 import 'package:v_temi/bloc/avatar_bloc.dart';
+import 'package:v_temi/consts.dart';
 
-import '../../consts.dart';
 import 'my_friends.dart';
 
 class MainWidget extends StatefulWidget {
@@ -30,12 +29,12 @@ class _MainWidgetState extends State<MainWidget> {
       body: IndexedStack(
         index: _selectedBar,
         children: [
-          MyMassageWidget(),
+          const MyMassageWidget(),
           BlocProvider(
             create: (_) => AvatarBloc(),
-            child: MyPageWidget(),
+            child: const MyPageWidget(),
           ),
-          MyFriendsWidget(),
+          const MyFriendsWidget(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -80,10 +79,11 @@ class MyPageWidget extends StatelessWidget {
         builder: (context, state) {
           if (state is AvatarInitial) {
             return const Center(
-                child: Text(
-              'Initial state',
-              style: MyFonts.onBlack,
-            ));
+              child: Text(
+                'Initial state',
+                style: MyFonts.onBlack,
+              ),
+            );
           }
           if (state is AvatarLoaded) {
             return AvatarWidget(

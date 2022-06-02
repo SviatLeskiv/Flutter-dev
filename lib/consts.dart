@@ -1,12 +1,10 @@
-// TODO Implement this library.// ignore_for_file: constant_identifier_names
-
 import 'package:flutter/material.dart';
 
 
 
 abstract class MyImages {
   
-  static const logo_main = 'images/logo_main.png';
+  static const logoMain = 'images/logo_main.png';
   static const logo = 'images/logo.png';
   static const avatar = 'images/avatar.png';
   static const mainAvatar = 'images/main_avatar.jpeg';
@@ -25,12 +23,12 @@ abstract class MyButtons {
 }
 
 abstract class MyTextField {
-  static  InputDecoration textFieldDecor(final String VariableCheck) {
+  static  InputDecoration textFieldDecor(final String variableCheck) {
     return InputDecoration(
       enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.orange)),
       focusedBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.orange)),
       hintStyle: TextStyle(color: Colors.orange[700]),
-      hintText: VariableCheck,
+      hintText: variableCheck,
       contentPadding: const EdgeInsets.symmetric(horizontal: 10),
     );
   }

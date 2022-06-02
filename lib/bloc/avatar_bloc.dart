@@ -1,11 +1,7 @@
-
-
 import 'dart:math';
-
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:v_temi/avatarList/avatar_list.dart';
-
 part 'avatar_event.dart';
 part 'avatar_state.dart';
 

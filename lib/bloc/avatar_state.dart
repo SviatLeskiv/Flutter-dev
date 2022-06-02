@@ -1,4 +1,3 @@
-
 part of 'avatar_bloc.dart';
 
 

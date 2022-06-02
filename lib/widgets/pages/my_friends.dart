@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 
 import 'package:flutter/material.dart';
 import 'package:v_temi/consts.dart';
@@ -15,7 +15,7 @@ class Friend {
 }
 
 class MyFriendsWidget extends StatefulWidget {
-  MyFriendsWidget({Key? key}) : super(key: key);
+  const MyFriendsWidget({Key? key}) : super(key: key);
 
   @override
   State<MyFriendsWidget> createState() => _MyFriendsWidgetState();
@@ -96,7 +96,7 @@ class _MyFriendsWidgetState extends State<MyFriendsWidget> {
   Widget build(BuildContext context) {
     return Stack(children: [
       ListView.builder(
-          padding: EdgeInsets.only(top: 100),
+          padding: const EdgeInsets.only(top: 100),
           keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
           itemCount: _filteredFriends.length,
           itemExtent: 80,
@@ -106,10 +106,10 @@ class _MyFriendsWidgetState extends State<MyFriendsWidget> {
               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
               child: InkWell(
                 splashColor: Colors.orangeAccent[100],
-                borderRadius: BorderRadius.all(Radius.circular(30)),
+                borderRadius: const BorderRadius.all(Radius.circular(30)),
                 onTap: () {},
                 child: Container(
-                  padding: EdgeInsets.all(7),
+                  padding: const EdgeInsets.all(7),
                   decoration: BoxDecoration(
                       border: Border.all(color: Colors.orange),
                       borderRadius: const BorderRadius.all(Radius.circular(30)),
@@ -127,7 +127,7 @@ class _MyFriendsWidgetState extends State<MyFriendsWidget> {
                         radius: 25,
                         backgroundImage: AssetImage(friend.imageName),
                       ),
-                      Padding(padding: EdgeInsets.only(right: 7)),
+                      const Padding(padding: EdgeInsets.only(right: 7)),
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -137,7 +137,7 @@ class _MyFriendsWidgetState extends State<MyFriendsWidget> {
                               style: MyFonts.onBlack,
                               maxLines: 1,
                             ),
-                            SizedBox(height: 5),
+                            const SizedBox(height: 5),
                             Text(
                               friend.commonFriend,
                               style: TextStyle(
@@ -147,7 +147,7 @@ class _MyFriendsWidgetState extends State<MyFriendsWidget> {
                           ],
                         ),
                       ),
-                      Icon(Icons.message, color: Colors.orange)
+                      const Icon(Icons.message, color: Colors.orange)
                     ],
                   ),
                 ),
@@ -155,7 +155,7 @@ class _MyFriendsWidgetState extends State<MyFriendsWidget> {
             );
           }),
       Padding(
-        padding: EdgeInsets.only(top: 50),
+        padding: const EdgeInsets.only(top: 50),
         child: TextField(
           cursorColor: Colors.orange,
           decoration: InputDecoration(
